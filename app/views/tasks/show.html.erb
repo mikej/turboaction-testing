@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @task %>
+<%= turbo_frame_tag "main" do %>
+  <%= render @task %>
+  <%= link_to "Edit this task", edit_task_path(@task) %>
+<% end %>
+
 
 <div>
-  <%= link_to "Edit this task", edit_task_path(@task) %> |
-  <%= link_to "Back to tasks", tasks_path %>
+  <textarea placeholder="Type something in here. It shouldn't be lost when editing the task title"></textarea>
+</div>
 
+<div>
+  <%= link_to "Back to tasks", tasks_path %>
   <%= button_to "Destroy this task", @task, method: :delete %>
 </div>

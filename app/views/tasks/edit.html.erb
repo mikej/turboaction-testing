@@ -1,6 +1,6 @@
 <h1>Editing task</h1>
 
-<%= turbo_frame_tag "main" do %>
+<%= turbo_frame_tag "main", data: { "turbo-action": "replace" } do %>
   <%= render "form", task: @task %>
   <%= link_to "Cancel", @task %> |
 <% end %>

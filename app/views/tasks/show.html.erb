@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= turbo_frame_tag "main" do %>
+<%= turbo_frame_tag "main", data: { "turbo-action": "replace" } do %>
   <%= render @task %>
   <%= link_to "Edit this task", edit_task_path(@task) %>
 <% end %>
